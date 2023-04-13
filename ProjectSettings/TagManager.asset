@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - TurtleKnight_Pixel
+  - RespawnTrigger
+  - StartingPoint
   layers:
   - Default
   - TransparentFX
