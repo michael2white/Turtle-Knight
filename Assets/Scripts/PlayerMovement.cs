@@ -17,10 +17,8 @@ public class PlayerMovement : MonoBehaviour
 
     private AudioSource audioSource;
     public AudioClip jumpSoundEffect;
-
-    private bool hasJumped = false;
-
     
+    private bool hasJumped = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     
         isGrounded = Physics2D.OverlapCircle(feetPosition.position, groundCheckCircle, groundLayer);
 
-        if (isGrounded == true && Input.GetButton("Jump"))
+        if (isGrounded == true && Input.GetButtonDown("Jump"))
         {
             if (!hasJumped)
             {
@@ -57,7 +55,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        playerRb.velocity = new Vector2(input * speed, playerRb.velocity.y);
+        float move = input * speed;
+        playerRb.velocity = new Vector2(move, playerRb.velocity.y);
 
         if (isGrounded)
         {
