@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        playerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     // Update is called once per frame
