@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        input = Input.GetAxisRaw("Horizontal");
+        input = Input.GetAxisRaw("Horizontal"); // Horizontal Movement Code
         if(input > 0)
         {
             spriteRenderer.flipX = true;
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     
         isGrounded = Physics2D.OverlapCircle(feetPosition.position, groundCheckCircle, groundLayer);
 
-        if (isGrounded == true && Input.GetButtonDown("Jump"))
+        if (isGrounded == true && Input.GetButtonDown("Jump")) //Jump Code
         {
             if (!hasJumped)
             {
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
                 playerRb.velocity = Vector2.up * jumpForce;
         }   
 
-        if (input > 0f)
+        if (input > 0f) // Animations
         {
             anim.SetBool("running", true);
         }
@@ -71,8 +71,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        float move = input * speed;
-        playerRb.velocity = new Vector2(move, playerRb.velocity.y);
+        float move = input * speed; //Only jumps if feet on the ground
+        playerRb.velocity = new Vector2(move, playerRb.velocity.y); 
 
         if (isGrounded)
         {
