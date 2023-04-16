@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TurtleKnightRun
+  m_Name: TK_Run
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,10 +21,10 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 874922027, guid: 29d22e5a54cbcda4eadb240ca49e9b22, type: 3}
-    - time: 0.25
+    - time: 0.3
       value: {fileID: 1928892296, guid: 71f2f03a33115534781cfb18dcc3cedf, type: 3}
-    - time: 0.55
-      value: {fileID: 874922027, guid: 29d22e5a54cbcda4eadb240ca49e9b22, type: 3}
+    - time: 0.5833333
+      value: {fileID: 1928892296, guid: 71f2f03a33115534781cfb18dcc3cedf, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,13 +46,13 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 874922027, guid: 29d22e5a54cbcda4eadb240ca49e9b22, type: 3}
     - {fileID: 1928892296, guid: 71f2f03a33115534781cfb18dcc3cedf, type: 3}
-    - {fileID: 874922027, guid: 29d22e5a54cbcda4eadb240ca49e9b22, type: 3}
+    - {fileID: 1928892296, guid: 71f2f03a33115534781cfb18dcc3cedf, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.56666666
+    m_StopTime: 0.59999996
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

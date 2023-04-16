@@ -19,12 +19,14 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip jumpSoundEffect;
     
     private bool hasJumped = false;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         playerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -51,6 +53,19 @@ public class PlayerMovement : MonoBehaviour
             }
                 playerRb.velocity = Vector2.up * jumpForce;
         }   
+
+        if (input > 0f)
+        {
+            anim.SetBool("running", true);
+        }
+        else if (input < 0f)
+        {
+            anim.SetBool("running", true);
+        }
+        else
+        {
+            anim.SetBool("running", false);
+        }
 
     }
 

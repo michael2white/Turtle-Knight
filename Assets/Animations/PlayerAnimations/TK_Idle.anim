@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TurtleKnightIdleToRun
+  m_Name: TK_Idle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,10 +21,8 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 1126776551, guid: 18eb3763f7223ce459fb5757ad770e97, type: 3}
-    - time: 0.1
-      value: {fileID: 1139359949, guid: 09b4679ee4f88d444a5834d00a3732d7, type: 3}
-    - time: 0.2
-      value: {fileID: 874922027, guid: 29d22e5a54cbcda4eadb240ca49e9b22, type: 3}
+    - time: 0.016666668
+      value: {fileID: 1126776551, guid: 18eb3763f7223ce459fb5757ad770e97, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -45,14 +43,13 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 1126776551, guid: 18eb3763f7223ce459fb5757ad770e97, type: 3}
-    - {fileID: 1139359949, guid: 09b4679ee4f88d444a5834d00a3732d7, type: 3}
-    - {fileID: 874922027, guid: 29d22e5a54cbcda4eadb240ca49e9b22, type: 3}
+    - {fileID: 1126776551, guid: 18eb3763f7223ce459fb5757ad770e97, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.21666667
+    m_StopTime: 0.033333335
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
