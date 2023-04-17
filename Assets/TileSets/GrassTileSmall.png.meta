@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 18eb3763f7223ce459fb5757ad770e97
+guid: e7b38cf7c7c2e324a8ca29f2ba7848ee
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,22 +117,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TurtleKnightIdle1_0
+      name: GrassTileSmall_0
       rect:
         serializedVersion: 2
-        x: 200
-        y: 20
-        width: 198
-        height: 214
+        x: 1
+        y: 0
+        width: 150
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 428526d817e5f144bb6a673b573e4487
-      internalID: 1126776551
+      spriteID: 7ae3331948705154787f0d6c6baffebe
+      internalID: -906413742
       vertices: []
       indices: 
       edges: []
@@ -148,8 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TurtleKnightIdle1_0: 1126776551
-      TurtleKnightIdle1_1: 108804934
+      GrassTileSmall_0: -906413742
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

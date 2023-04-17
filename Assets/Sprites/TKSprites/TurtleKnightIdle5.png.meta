@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 18eb3763f7223ce459fb5757ad770e97
+guid: 09160dcf2d7cf024194c05c7bea575e5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TurtleKnightIdle1_0
+      name: TurtleKnightIdle5_0
       rect:
         serializedVersion: 2
         x: 200
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 428526d817e5f144bb6a673b573e4487
-      internalID: 1126776551
+      spriteID: 68b18987bad27874a9ab6219f8c4fda9
+      internalID: 1772178672
       vertices: []
       indices: 
       edges: []
@@ -148,8 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TurtleKnightIdle1_0: 1126776551
-      TurtleKnightIdle1_1: 108804934
+      TurtleKnightIdle5_0: 1772178672
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
