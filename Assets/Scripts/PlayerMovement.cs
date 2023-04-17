@@ -36,10 +36,12 @@ public class PlayerMovement : MonoBehaviour
         if(input > 0)
         {
             spriteRenderer.flipX = true;
+            GetComponent<BoxCollider2D>().offset = new Vector2(-Mathf.Abs(GetComponent<BoxCollider2D>().offset.x), GetComponent<BoxCollider2D>().offset.y);
         }
         else if (input < 0)
         {
             spriteRenderer.flipX = false;
+            GetComponent<BoxCollider2D>().offset = new Vector2(Mathf.Abs(GetComponent<BoxCollider2D>().offset.x), GetComponent<BoxCollider2D>().offset.y);
         }
     
         isGrounded = Physics2D.OverlapCircle(feetPosition.position, groundCheckCircle, groundLayer);
