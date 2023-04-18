@@ -21,11 +21,14 @@ public class Finish : MonoBehaviour
         {
             finishSound.Play();
             levelCompleted = true;
-            Invoke("CompleteLevel", 1.5f);
+            collision.gameObject.GetComponent<PlayerMovement>().canMove = false; //disables player movement with canMove from pm script
+            collision.gameObject.GetComponent<PlayerMovement>().speed = 0f; // set player speed to zero
+            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero; // set player velocity to zero
+            Invoke("LoadNextLevel", 1.5f);
         }
     }
-
-    private void CompleteLevel()
+    
+    private void LoadNextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

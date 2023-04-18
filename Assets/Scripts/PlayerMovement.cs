@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     private bool hasJumped = false;
     private Animator anim;
 
+    public bool canMove = true; //Added variable to enable/disable player movement
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!canMove) //Exit if player movement is disabled
+        {
+            return;
+        }
+
         input = Input.GetAxisRaw("Horizontal"); // Horizontal Movement Code
+        
         if(input > 0)
         {
             spriteRenderer.flipX = true;
