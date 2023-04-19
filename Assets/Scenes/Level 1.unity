@@ -5188,6 +5188,7 @@ GameObject:
   - component: {fileID: 1288161689}
   - component: {fileID: 1288161691}
   - component: {fileID: 1288161692}
+  - component: {fileID: 1288161693}
   m_Layer: 0
   m_Name: RespawnTrigger
   m_TagString: RespawnTrigger
@@ -5347,6 +5348,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1288161693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288161688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475b658ed398a5e41af83c64090b0829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  collisionSound: {fileID: 0}
 --- !u!1 &1361835577
 GameObject:
   m_ObjectHideFlags: 0
@@ -5654,7 +5669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475b658ed398a5e41af83c64090b0829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: -1
   collisionSound: {fileID: 8300000, guid: 2b21ef916f6943c439b71a7c74568878, type: 3}
 --- !u!61 &1453689879
 BoxCollider2D:

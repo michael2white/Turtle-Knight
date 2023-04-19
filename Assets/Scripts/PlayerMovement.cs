@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool canMove = true; //Added variable to enable/disable player movement
 
+    private enum MovementState { idle, running, jumping, falling } //Animator numbers
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MovementState state;
+
         if(!canMove) //Exit if player movement is disabled
         {
             return;
@@ -68,16 +72,27 @@ public class PlayerMovement : MonoBehaviour
 
         if (input > 0f) // Animations
         {
-            anim.SetBool("running", true);
+            state = MovementState.running;
         }
         else if (input < 0f)
         {
-            anim.SetBool("running", true);
+            state = MovementState.running;
         }
         else
         {
-            anim.SetBool("running", false);
+            state = MovementState.idle;
         }
+
+        if (playerRb.velocity.y > 0)
+        {
+            state = MovementState.jumping;
+        }
+        else if (playerRb.velocity.y < 0)
+        {
+            state = MovementState.falling;
+        }
+
+        anim.SetInteger("state", (int)state);
 
     }
 
