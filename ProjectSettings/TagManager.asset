@@ -47,3 +47,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: TurtleKnight_Pixel
+    uniqueID: 2822559191
+    locked: 0

@@ -25,12 +25,15 @@ public class PlayerMovement : MonoBehaviour
 
     private enum MovementState { idle, running, jumping, falling } //Animator numbers
 
+    public ParticleSystem jumpParticles;
+
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         playerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
         anim = GetComponent<Animator>();
+        jumpParticles = GetComponent<ParticleSystem>(); 
     }
 
     // Update is called once per frame
@@ -64,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!hasJumped)
             {
+                jumpParticles.Play();
                 audioSource.PlayOneShot(jumpSoundEffect);
                 hasJumped = true;
             }
