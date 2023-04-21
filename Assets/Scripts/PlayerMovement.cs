@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool canMove = true; //Added variable to enable/disable player movement
 
-    private enum MovementState { idle, running, jumping, falling } //Animator numbers
+    private enum MovementState { idle, running, jumping, falling, dropWeapon } //Animator numbers
 
     public ParticleSystem jumpParticles;
 
