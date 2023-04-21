@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -76,11 +77,10 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damageAmount;
 
-        // If the player's health reaches zero, respawn the player
+        // If the player's health reaches zero, sends to game over screen
         if (currentHealth <= 0)
         {
-            currentHealth = maxHealth;
-            // Call a respawn function here
+            SceneManager.LoadScene("End Screen");
         }
     }
     
