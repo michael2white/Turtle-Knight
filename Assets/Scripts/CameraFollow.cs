@@ -11,7 +11,7 @@ public class CameraFollow : MonoBehaviour
     public float dampingTime = 0f;
     private Vector3 velocity = Vector3.zero;
 
-    public float xOffsetThreshold = 140f;
+    public float xOffsetThreshold = 138f;
     public float yPosition = -28.5f;
     
 
