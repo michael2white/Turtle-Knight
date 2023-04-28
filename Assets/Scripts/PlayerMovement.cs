@@ -22,10 +22,13 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
 
     public bool canMove = true; //Added variable to enable/disable player movement
-
     private enum MovementState { idle, running, jumping, falling, dropWeapon } //Animator numbers
-
     public ParticleSystem jumpParticles;
+
+    public float dashDistance;
+    private float dashTime;
+    private float lastInputTime;
+    private bool isDashing = false;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +75,16 @@ public class PlayerMovement : MonoBehaviour
                 hasJumped = true;
             }
                 playerRb.velocity = Vector2.up * jumpForce;
+        }
+
+        if (Time.time - lastInputTime < 0.2f && Input.GetButtonDown("Horizontal"))
+        {
+            StartCoroutine(Dash());
+            lastInputTime = -1f;
+        }
+        else if (Input.GetButtonDown("Horizontal"))
+        {
+            lastInputTime = Time.time;
         }   
 
         if (input > 0f) // Animations
@@ -100,6 +113,26 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private IEnumerator Dash()
+    {
+        isDashing = true;
+
+        float startTime = Time.time;
+        float elapsedTime = 0f;
+        float dashDuration = 0.5f; // adjust this as needed
+        Vector2 dashDirection = new Vector2(input, 0f).normalized;
+        float dashSpeed = 200f;
+
+        while (elapsedTime < dashDuration)
+        {
+            playerRb.MovePosition((Vector2)transform.position + (dashDirection * dashSpeed * Time.deltaTime));
+            elapsedTime = Time.time - startTime;
+            yield return null;
+        }
+
+        isDashing = false;
+    }
+
     void FixedUpdate()
     {
         float move = input * speed; //Only jumps if feet on the ground
@@ -108,6 +141,11 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded)
         {
             hasJumped = false;
+        }
+
+        if (!isDashing)
+        {
+            playerRb.velocity = new Vector2(move, playerRb.velocity.y);
         }
     }
 }

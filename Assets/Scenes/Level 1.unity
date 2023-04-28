@@ -2809,6 +2809,7 @@ MonoBehaviour:
   jumpSoundEffect: {fileID: 8300000, guid: ba39bf8baf6d13046889b2d64822381a, type: 3}
   canMove: 1
   jumpParticles: {fileID: 0}
+  dashDistance: 30
 --- !u!82 &455885742
 AudioSource:
   m_ObjectHideFlags: 0
