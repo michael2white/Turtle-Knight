@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip jumpSoundEffect;
     
     private bool hasJumped = false;
+    private int numJumps = 0;
     private Animator anim;
 
     public bool canMove = true; //Added variable to enable/disable player movement
@@ -29,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     private float dashTime;
     private float lastInputTime;
     private bool isDashing = false;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -74,8 +77,16 @@ public class PlayerMovement : MonoBehaviour
                 jumpParticles.Play();
                 audioSource.PlayOneShot(jumpSoundEffect);
                 hasJumped = true;
+                numJumps = 1;
             }
                 playerRb.velocity = Vector2.up * jumpForce;
+        }
+        else if (numJumps < 1 && Input.GetButtonDown("Jump"))
+        {
+            jumpParticles.Play();
+            audioSource.PlayOneShot(jumpSoundEffect);
+            numJumps++;
+            playerRb.velocity = Vector2.up * jumpForce;
         }
 
         if (Time.time - lastInputTime < 0.2f && Input.GetButtonDown("Horizontal"))
@@ -142,6 +153,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded)
         {
             hasJumped = false;
+            numJumps = 0;
         }
 
         if (!isDashing)
