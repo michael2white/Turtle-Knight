@@ -68,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded == true && Input.GetButtonDown("Jump")) //Jump Code
         {
+
             if (!hasJumped)
             {
                 jumpParticles.Play();
@@ -123,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 dashDirection = new Vector2(input, 0f).normalized;
         float dashSpeed = 200f;
 
-        while (elapsedTime < dashDuration)
+        while (elapsedTime < dashDuration && !hasJumped)
         {
             playerRb.MovePosition((Vector2)transform.position + (dashDirection * dashSpeed * Time.deltaTime));
             elapsedTime = Time.time - startTime;
