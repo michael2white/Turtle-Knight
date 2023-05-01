@@ -1,5 +1,5 @@
 # Turtle-Knight
-2D Sidescroller Game
+2D Sidescroller Game (Created in Unity)
 
 This project is a love letter to the amazing indie knight genre of the past 20 years. Gaming has always been a great medium to tell a story while also allowing the players to be a part of that story. Turtle Knight's aim is to spread joy into the world in a fun and adventerous way.
 
