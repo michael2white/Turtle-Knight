@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private float dashTime;
     private float lastInputTime;
     private bool isDashing = false;
+    private Vector2 lastTapDirection = Vector2.zero;
     
 
 
@@ -40,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
         playerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
         anim = GetComponent<Animator>();
         jumpParticles = GetComponent<ParticleSystem>(); 
+
+        lastTapDirection = Vector2.zero;
     }
 
     // Update is called once per frame
@@ -135,13 +138,17 @@ public class PlayerMovement : MonoBehaviour
         Vector2 dashDirection = new Vector2(input, 0f).normalized;
         float dashSpeed = 200f;
 
-        while (elapsedTime < dashDuration && !hasJumped)
+        if (lastTapDirection == dashDirection && lastTapDirection != Vector2.zero)
         {
-            playerRb.MovePosition((Vector2)transform.position + (dashDirection * dashSpeed * Time.deltaTime));
-            elapsedTime = Time.time - startTime;
-            yield return null;
+            while (elapsedTime < dashDuration && !hasJumped)
+            {
+                playerRb.MovePosition((Vector2)transform.position + (dashDirection * dashSpeed * Time.deltaTime));
+                elapsedTime = Time.time - startTime;
+                yield return null;
+            }
         }
 
+        lastTapDirection = dashDirection;
         isDashing = false;
     }
 
