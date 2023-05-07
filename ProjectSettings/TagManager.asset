@@ -50,3 +50,12 @@ TagManager:
   - name: TurtleKnight_Pixel
     uniqueID: 2822559191
     locked: 0
+  - name: First BG
+    uniqueID: 2265021873
+    locked: 0
+  - name: Second BG
+    uniqueID: 793536083
+    locked: 0
+  - name: Third BG
+    uniqueID: 1958036405
+    locked: 0

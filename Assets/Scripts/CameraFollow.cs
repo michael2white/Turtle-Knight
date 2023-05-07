@@ -12,7 +12,9 @@ public class CameraFollow : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     public float xOffsetThreshold = 138f;
+    public float xOffsetThresholdTwo = 240f;
     public float yPosition = -28.5f;
+    public float yPositionTwo = -10f;
     private float originalYPosition;
 
     private void Start()
@@ -26,13 +28,15 @@ public class CameraFollow : MonoBehaviour
     {
         Vector3 desiredPosition = new Vector3(target.position.x + offset.x, transform.position.y, transform.position.z);
 
-        // Check if the player has moved past the xOffsetThreshold
-        if (target.position.x > xOffsetThreshold)
+        if (target.position.x > xOffsetThresholdTwo)
+        {
+            desiredPosition.y = yPositionTwo;
+        }
+        else if (target.position.x > xOffsetThreshold)
         {
             desiredPosition.y = yPosition;
         }
-        // Check if player has moved back to left of xOffsetThreshold
-        else if (target.position.x < xOffsetThreshold)
+        else
         {
             desiredPosition.y = originalYPosition;
         }
