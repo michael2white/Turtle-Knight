@@ -854,9 +854,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d30dd5eac5410a142938f6c73d4d5f01, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2a00df04c1aef534ab844a92c1d1778a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1168,7 +1168,9 @@ MonoBehaviour:
   offset: {x: 2, y: 2, z: -1}
   dampingTime: 0
   xOffsetThreshold: 138
+  xOffsetThresholdTwo: 240
   yPosition: -28.5
+  yPositionTwo: -10
 --- !u!1 &526575929
 GameObject:
   m_ObjectHideFlags: 0
@@ -7333,6 +7335,7 @@ MonoBehaviour:
   jumpSoundEffect: {fileID: 8300000, guid: ba39bf8baf6d13046889b2d64822381a, type: 3}
   canMove: 1
   jumpParticles: {fileID: 0}
+  dashDistance: 0
 --- !u!50 &1271013629
 Rigidbody2D:
   serializedVersion: 4
