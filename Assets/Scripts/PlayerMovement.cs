@@ -92,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
             playerRb.velocity = Vector2.up * jumpForce;
         }
 
-        if (Time.time - lastInputTime < 0.2f && Input.GetButtonDown("Horizontal"))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             StartCoroutine(Dash());
             lastInputTime = -1f;
@@ -138,15 +138,15 @@ public class PlayerMovement : MonoBehaviour
         Vector2 dashDirection = new Vector2(input, 0f).normalized;
         float dashSpeed = 200f;
 
-        if (lastTapDirection == dashDirection && lastTapDirection != Vector2.zero)
-        {
+        
+        
             while (elapsedTime < dashDuration && !hasJumped)
             {
                 playerRb.MovePosition((Vector2)transform.position + (dashDirection * dashSpeed * Time.deltaTime));
                 elapsedTime = Time.time - startTime;
                 yield return null;
             }
-        }
+        
 
         lastTapDirection = dashDirection;
         isDashing = false;
