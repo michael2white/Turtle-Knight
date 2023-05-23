@@ -131,6 +131,8 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator Dash()
     {
         isDashing = true;
+        
+        MovementState state;
 
         float startTime = Time.time;
         float elapsedTime = 0f;
@@ -142,7 +144,13 @@ public class PlayerMovement : MonoBehaviour
         
             while (elapsedTime < dashDuration && !hasJumped)
             {
+                //Moves the Player
                 playerRb.MovePosition((Vector2)transform.position + (dashDirection * dashSpeed * Time.deltaTime));
+
+                //Sets dash animation
+                state = MovementState.running;
+                anim.SetInteger("state", (int)state);
+
                 elapsedTime = Time.time - startTime;
                 yield return null;
             }
