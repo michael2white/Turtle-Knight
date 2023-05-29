@@ -7564,7 +7564,7 @@ MonoBehaviour:
   speed: 11.5
   input: 0
   spriteRenderer: {fileID: 1271013631}
-  jumpForce: 15
+  jumpForce: 17
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
