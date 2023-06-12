@@ -77,6 +77,9 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damageAmount;
 
+        // Cap the health at a maximum of 3 by creating a range
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
         // If the player's health reaches zero, sends to game over screen
         if (currentHealth <= 0)
         {
